@@ -5,7 +5,6 @@
 #include <windows.h>
 #include <iomanip>
 #include <stdlib.h>
-#include "metodos.h"
 using namespace std;
 
 void opcMenu();
@@ -293,13 +292,17 @@ void listar()
 
             k++;
         }
-
         inCadastro.read((char *)(&f),sizeof(funcionario));
-
     }
+
+
 
     inCadastro.close( );
 
+    gotoxy(10,20);
+    textcolor(WHITE);
+    textbackground(RED);
+    cout << " APERTE QUALQUER TECLA PARA VOLTAR PARA O MENU ";
 
     getch();
 
@@ -528,10 +531,64 @@ void zerar()
             textcolor(WHITE);
             textbackground(GREEN);
             cout << "  OPERACAO CANCELADA ";
+            Sleep(2000);
             opcMenu();
         }
     }
+    else
+    {
+        gotoxy(10,16);
+        textcolor(WHITE);
+        textbackground(GREEN);
+        cout << " ESSE ID NAO PERTENCE A NEHUM FUNCIONARIO ";
+        gotoxy(10,18);
+        textcolor(WHITE);
+        textbackground(GREEN);
+        cout << " DESEJA CADASTRAR ESSE ID (S/N) ";
 
+        for (int i = 0; i < 5; i++)
+        {
+            gotoxy(45+i,18);
+            textbackground(GREEN);
+            cout << '\0';
+        }
+
+        gotoxy(47,18);
+        textcolor(WHITE);
+        cin >> novoalteracao;
+
+        if(novoalteracao == 's' || novoalteracao == 'S')
+        {
+            cadastrodefuncionarios();
+        }
+        if(novoalteracao == 'n' || novoalteracao == 'N')
+        {
+            gotoxy(10,20);
+            textcolor(WHITE);
+            textbackground(GREEN);
+            cout << " REALIZAR OUTRA EXCLUSAO (S/N) ";
+
+            for (int i = 0; i < 5; i++)
+            {
+                gotoxy(45+i,20);
+                textbackground(GREEN);
+                cout << '\0';
+            }
+
+            gotoxy(47,20);
+            textcolor(WHITE);
+            cin >> novoalteracao;
+
+            if(novoalteracao == 's' || novoalteracao == 'S')
+            {
+                zerar();
+            }
+            else
+            {
+                opcMenu();
+            }
+        }
+    }
     gotoxy(10,24);
     textcolor(WHITE);
     textbackground(GREEN);
