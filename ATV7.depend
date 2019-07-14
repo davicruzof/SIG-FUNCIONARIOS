@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1563130668 source:c:\users\davi\desktop\atividadesprog2\atividade7\main.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<conio2.h>
+	<locale.h>
+	"listar.h"
+	"cadastro.h"
+
+1562970755 c:\users\davi\desktop\atividadesprog2\atividade7\listar.h
+
+1563132261 c:\users\davi\desktop\atividadesprog2\atividade7\cadastro.h
+	<iostream>
+	<conio2.h>
+	<fstream>
+	<stdio.h>
+	<windows.h>
+	<iomanip>
+	<stdlib.h>
+	"metodos.h"
+
+1563054134 c:\users\davi\desktop\atividadesprog2\atividade7\metodos.h
+
